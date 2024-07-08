@@ -1,0 +1,14 @@
+{
+  "name": "node_basics",
+  "version": "1.0.0",
+  "description": "learning node.js",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "author": "abdullahi onikoko",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
