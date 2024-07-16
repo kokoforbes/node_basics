@@ -3,6 +3,7 @@ const app = express();
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 
 dotenv.config();
 
@@ -22,6 +23,6 @@ const postRoutes = require("./routes/post");
 
 // Middleware
 app.use(morgan("dev"));
-
+app.use(bodyParser.json());
 app.use("/", postRoutes);
 app.listen(port, () => console.log(`listening on port ${port}!`));
