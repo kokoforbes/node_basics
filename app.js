@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-
+const expressValidator = require("express-validator");
 dotenv.config();
 
 const port = process.env.PORT || 3000;
@@ -24,5 +24,6 @@ const postRoutes = require("./routes/post");
 // Middleware
 app.use(morgan("dev"));
 app.use(bodyParser.json());
+app.use(expressValidator());
 app.use("/", postRoutes);
 app.listen(port, () => console.log(`listening on port ${port}!`));
